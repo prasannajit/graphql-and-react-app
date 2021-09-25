@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import Loader from '../Loader/';
 import { StyledSection } from './styled';
@@ -19,7 +20,7 @@ export const GET_BLOCKS = gql`
 const columns = [
     {
         field: 'hash', headerName: 'Hash', width: 500, renderCell: (props) => {
-            return <a href={`/blocks/${props.formattedValue}`}>{props.formattedValue}</a>
+            return <Link to={`/blocks/${props.formattedValue}`}>{props.formattedValue}</Link>
         }
     },
     {
