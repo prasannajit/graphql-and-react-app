@@ -7,7 +7,7 @@ block and view more details.
 
 The application is hosted on Netlify and available on the be below mentioned URL;
 
-<https://block-chain-demo.netlify.app/blocks>
+<https://block-chain-demo.netlify.app>
 
 The application uses the graphql server hosted on Heroku. The url is;
 
