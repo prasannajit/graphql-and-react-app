@@ -1,66 +1,11 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { useParams, Link } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import Loader from '../Loader/';
+import { getColumns } from './helpers';
+import { GET_BLOCK_DETAILS } from './query';
 import { LinkWrapper } from './styled';
-
-// Graphql query to fetch blocks data
-export const GET_BLOCK_DETAILS = gql`
-    query GetBlockDetails($blockHash: String!) {
-        block(hash: $blockHash) {
-            size
-            block_index
-            prev_block
-            tx {
-            bits
-            time
-            block_index
-            weight
-            size
-            fee
-            hash
-            }
-        }
-    }
-`;
-
-// Columns and their properties to be used by data-grid components
-const columns = [
-    {
-        field: 'hash', headerName: 'Hash', width: 500
-    },
-    {
-        field: 'weight',
-        headerName: 'Weight',
-        type: 'number',
-        width: 150,
-    },
-    {
-        field: 'time',
-        headerName: 'Time',
-        width: 150,
-        type: 'number',
-    },
-    {
-        field: 'block_index',
-        headerName: 'Block Index',
-        type: 'number',
-        width: 150,
-    },
-    {
-        field: 'size',
-        headerName: 'Size',
-        type: 'number',
-        width: 150,
-    },
-    {
-        field: 'fee',
-        headerName: 'Fee',
-        type: 'number',
-        width: 150,
-    }
-];
 
 const BlockDetails = () => {
     // Get the query params to retrieve the hash
@@ -86,7 +31,7 @@ const BlockDetails = () => {
             <div style={{ height: 500, width: '100%' }}>
                 <DataGrid
                     rows={rows}
-                    columns={columns}
+                    columns={getColumns()}
                     pageSize={10}
                     rowsPerPageOptions={[10]}
                     disableSelectionOnClick
