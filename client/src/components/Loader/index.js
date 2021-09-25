@@ -4,7 +4,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 
 const Loader = () => {
     return (
-        <Stack sx={{ width: '100%', color: 'grey.500' }} spacing={2}>
+        <Stack sx={{ width: '100%', color: 'grey.500' }} spacing={2} data-testid="at-loader-component">
             <LinearProgress color="secondary" />
             <LinearProgress color="success" />
             <LinearProgress color="inherit" />

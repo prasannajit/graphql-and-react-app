@@ -12,7 +12,7 @@ const App = () => {
           <Redirect to="/blocks" />
         </Route>
         <Route path="/blocks" exact>
-          <Blocks />
+          <Blocks timestamp="1573858800000"/>
         </Route>
         <Route path="/blocks/:hash">
           <BlockDetails />

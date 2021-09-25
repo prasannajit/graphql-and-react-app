@@ -6,8 +6,8 @@ import Loader from '../Loader/';
 import { LinkWrapper } from './styled';
 
 // Graphql query to fetch blocks data
-const GET_BLOCK_DETAILS = gql`
-    query GET_BLOCK_DETAILS($blockHash: String!) {
+export const GET_BLOCK_DETAILS = gql`
+    query GetBlockDetails($blockHash: String!) {
         block(hash: $blockHash) {
             size
             block_index

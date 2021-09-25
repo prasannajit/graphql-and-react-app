@@ -43,9 +43,9 @@ const columns = [
     }
 ];
 
-const Blocks = () => {
+const Blocks = ({timestamp}) => {
     const { loading, error, data } = useQuery(GET_BLOCKS, {
-        variables: { blocksTimestamp: '1573858800000' },
+        variables: { blocksTimestamp: timestamp },
     });
     if (loading) {
         return <><Loader /></>;
