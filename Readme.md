@@ -19,6 +19,7 @@ The code for this application is available on github;
 <https://github.com/NuriCareers/Prasannajit-Tripathy-Coding-Challenge>
 
 Perform the following steps to run the application locally.
+
 Step 1: Clone the repo
 
 git clone <https://github.com/NuriCareers/Prasannajit-Tripathy-Coding-Challenge>
