@@ -6,7 +6,8 @@ import { GlobalStyle } from "./styled";
 
 // Initialize Apollo client to make graphql calls
 const client = new ApolloClient({
-  uri: 'https://powerful-ocean-28723.herokuapp.com/',
+  // uri: 'https://powerful-ocean-28723.herokuapp.com/',
+  uri: 'http://localhost:4000/',
   cache: new InMemoryCache(),
 });
 
