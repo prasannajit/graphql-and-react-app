@@ -10,6 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "apollo-datasource-rest": "^3.2.0",
     "apollo-server": "^3.3.0",
