@@ -21,26 +21,28 @@ const BlockDetails = () => {
             const updatedTxn = { ...txn, id: txn.hash };
             return updatedTxn;
         });
-        return <>
-            <h1>Block Details</h1>
-            <p>Block Index: {data.block.block_index}</p>
-            <p>Block Size: {data.block.size}</p>
-            <p>Previous Block: {data.block.prev_block}</p>
-            <br></br>
-            <h3>Transactions</h3>
-            <div style={{ height: 500, width: '100%' }}>
-                <DataGrid
-                    rows={rows}
-                    columns={getColumns()}
-                    pageSize={10}
-                    rowsPerPageOptions={[10]}
-                    disableSelectionOnClick
-                />
-            </div>
-            <LinkWrapper>
-                <Link to="/blocks">Back to Blocks Page</Link>
-            </LinkWrapper>
-        </>
+        return (
+            <>
+                <h1>Block Details</h1>
+                <p>Block Index: {data.block.block_index}</p>
+                <p>Block Size: {data.block.size}</p>
+                <p>Previous Block: {data.block.prev_block}</p>
+                <br></br>
+                <h3>Transactions</h3>
+                <div style={{ height: 500, width: '100%' }}>
+                    <DataGrid
+                        rows={rows}
+                        columns={getColumns()}
+                        pageSize={10}
+                        rowsPerPageOptions={[10]}
+                        disableSelectionOnClick
+                    />
+                </div>
+                <LinkWrapper>
+                    <Link to="/blocks">Back to Blocks Page</Link>
+                </LinkWrapper>
+            </>
+        );
     } else if (error) {
         return <>Error. Please refresh the page</>
     }
